@@ -1,6 +1,6 @@
 # k8s-kind
 
-## setup kubectl and kind
+## Setup kubectl and kind
 
 ```xml
 git clone 
@@ -16,9 +16,9 @@ kubectl version --client
 ```
 
 
-## setup Cluster with one master and two worker Node
+## Setup Cluster with one master and two worker Node
 ```xml
-kind create cluster --name mycluster --config kind-mconfig.yaml --image kindest/node:v1.33.1
+kind create cluster --name mycluster --config cluster-master-config.yml --image kindest/node:v1.33.1
 ```
 
 ### Verify
@@ -33,6 +33,8 @@ kubectl get pods -n kube-system
 kubectl get nodes
 kubectl get nodes -o wide
 kubectl get ns
+
+---
 
 
 
