@@ -3,9 +3,9 @@
 ## Setup kubectl and kind
 
 ```xml
-git clone 
+git clone https://github.com/xrootms/kind-kubelet-cluster-ingressController-setup.git
 cd kind-kubelet-cluster-ingressController-setup
-chmod +X kind-kubectl.sh
+chmod +x kind-kubectl.sh
 ./kind-kubectl.sh
 ```
 ### Verify
@@ -17,6 +17,7 @@ kubectl version --client
 
 
 ## Setup Cluster with one master and two worker Node
+
 ```xml
 kind create cluster --name mycluster --config cluster-master-config.yml --image kindest/node:v1.33.1
 ```
@@ -36,6 +37,33 @@ kubectl get ns
 
 ---
 
+## Setup Nginx Ingress Controller
 
+```xml
+kubectl apply -f ingress-controller-for-kind.yaml
+```
+
+### Verify
+
+```xml
+kubectl get pods -n ingress-nginx
+kubectl get svc -n ingress-nginx
+kubectl get deploy -n ingress-nginx
+kubectl describe pod <pod-name> -n ingress-nginx
+```
+
+
+```xml
+kubectl get ingressclass         ## SWhen you installer nginx ingress controller
+
+What is k8s.io/ingress-nginx: It is the unique controller identifier used by the NGINX Ingress Controller to associate itself with an IngressClass and process matching ingress resources.
+
+kubectl get ingress                      # Check Ingress Resource
+kubectl describe ingress demo   # Check Ingress Resource
+
+kubectl logs -n ingress-nginx <controller-pod>   # Check Ingress Logs
+
+
+```
 
 ```
