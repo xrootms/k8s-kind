@@ -571,7 +571,6 @@ spec:
           seccompProfile:
             type: RuntimeDefault
       nodeSelector:
-        ingress-ready: "true"
         kubernetes.io/os: linux
       restartPolicy: OnFailure
       serviceAccountName: ingress-nginx-admission
@@ -628,7 +627,6 @@ spec:
           seccompProfile:
             type: RuntimeDefault
       nodeSelector:
-        ingress-ready: "true"
         kubernetes.io/os: linux
       restartPolicy: OnFailure
       serviceAccountName: ingress-nginx-admission
