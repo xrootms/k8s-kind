@@ -1,5 +1,5 @@
 # k8s-kind
-
+#### -----------------------------------------
 ## 1. Setup kubectl and kind
 
 ```xml
@@ -15,7 +15,7 @@ kind version
 kubectl version --client
 ```
 
-
+#### -----------------------------------------
 ## 2. Setup Cluster with one master and two worker Node
 
 ```xml
@@ -36,8 +36,7 @@ kubectl get nodes -o wide
 kubectl get ns
 ```
 
----
-
+#### -----------------------------------------
 ## 3. Install Nginx Ingress Controller
 
 ```xml
