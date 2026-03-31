@@ -8,6 +8,10 @@
 kind create cluster --name mycluster --config kind-mconfig.yaml --image kindest/node:v1.33.1
 ```
 
+```xml
+kind version
+kubectl version --client
+```
 
 ```groovy
 kind get clusters
